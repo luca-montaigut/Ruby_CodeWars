@@ -26,7 +26,7 @@ def isTriangle(a,b,c)
   tri << a
   tri << b
   tri << c
-tri.max < tri.min(2).sum 
+  tri.max < tri.min(2).sum 
 end
 
 #Disemvowel Trolls
@@ -76,4 +76,32 @@ data.size.times do |i|
     end
   end
   return cat
+end
+
+#Highest and Lowest
+def high_and_low(numbers)
+  max = numbers.split.map{|x| x.to_i}.max 
+  min = numbers.split.map{|x| x.to_i}.min
+  result = max.to_s + " " + min.to_s
+end
+
+#Find the next perfect square!
+def find_next_square(sq)
+a = Math.sqrt(sq).to_f 
+  if a == a.to_i
+    (a+1)*(a+1)
+  else
+  -1
+  end
+end
+
+#Remove the minimum
+def remove_smallest(numbers)
+  if numbers == []
+    return numbers
+  end
+  arr = []
+  numbers.each {|x| arr << x.to_i}
+  arr.delete_at(arr.index(arr.min))
+  return arr
 end
