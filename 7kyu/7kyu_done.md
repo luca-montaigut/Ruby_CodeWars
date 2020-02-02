@@ -1,10 +1,10 @@
-#Vowel Count
+### Vowel Count
 def getCount(inputStr)
   inputStr.count("aeiou")
 end
 
 
-#Get the Middle Character
+### Get the Middle Character
 def get_middle(s)
   if s.size.odd?
     s[s.size/2]
@@ -14,13 +14,13 @@ def get_middle(s)
 end
 
 
-#Square Every Digit
+### Square Every Digit
 def square_digits num
   num.to_s.split('').map{|i| i.to_i**2}.join.to_i
 end
 
 
-#Is this a triangle?
+### Is this a triangle?
 def isTriangle(a,b,c)
   tri = []
   tri << a
@@ -29,22 +29,22 @@ def isTriangle(a,b,c)
   tri.max < tri.min(2).sum 
 end
 
-#Disemvowel Trolls
+### Disemvowel Trolls
 def disemvowel(str)
   str.delete"aAeEiIoOuU"
 end
 
-#Shortest Word
+### Shortest Word
 def find_short(s)
   l = s.split(" ").map.sort_by(&:size).first.size
 end
 
-#List Filtering
+### List Filtering
 def filter_list(l)
   l.keep_if {|a| a!=a.to_s && a.to_s.count("0-9")>0}
 end
 
-#Credit Card Mask
+### Credit Card Mask
 def maskify(cc)
   i = 0
   finish = []
@@ -57,7 +57,7 @@ def maskify(cc)
   finish.join
 end
 
-#Jaden Casing Strings
+### Jaden Casing Strings
 class String
   def toJadenCase
     s = self.split
@@ -65,7 +65,7 @@ class String
   end
 end
 
-#Categorize New Member
+### Categorize New Member
 def openOrSenior(data)
   cat = []
 data.size.times do |i|
@@ -78,14 +78,14 @@ data.size.times do |i|
   return cat
 end
 
-#Highest and Lowest
+### Highest and Lowest
 def high_and_low(numbers)
   max = numbers.split.map{|x| x.to_i}.max 
   min = numbers.split.map{|x| x.to_i}.min
   result = max.to_s + " " + min.to_s
 end
 
-#Find the next perfect square!
+### Find the next perfect square!
 def find_next_square(sq)
 a = Math.sqrt(sq).to_f 
   if a == a.to_i
@@ -95,7 +95,7 @@ a = Math.sqrt(sq).to_f
   end
 end
 
-#Remove the minimum
+### Remove the minimum
 def remove_smallest(numbers)
   if numbers == []
     return numbers
@@ -105,3 +105,17 @@ def remove_smallest(numbers)
   arr.delete_at(arr.index(arr.min))
   return arr
 end
+
+### Isograms
+def is_isogram(string)
+  array = string.downcase.chars.map {|char| string.downcase.count(char) > 1 ? "not isogram" : "isogram"}
+  array.include?("not isogram") ? false : true 
+end
+// solution finale bien plus maline : string.downcase.chars.uniq == string.downcase.chars
+
+#Two to One
+def longest(a1, a2)
+  a = a1 + a2
+  a.chars.uniq.sort.join
+end
+
