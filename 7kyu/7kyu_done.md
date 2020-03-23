@@ -113,9 +113,21 @@ def is_isogram(string)
 end
 // solution finale bien plus maline : string.downcase.chars.uniq == string.downcase.chars
 
-#Two to One
+### Two to One
 def longest(a1, a2)
   a = a1 + a2
   a.chars.uniq.sort.join
+end
+
+### Binary Addition
+def add_binary(a,b)
+  (a + b).to_s(2)
+end
+
+### Testing 1-2-3
+def number(lines)
+  tab = []
+  lines.each_with_index { |line, i| tab << "#{i + 1}: #{line}" }
+  return tab
 end
 
